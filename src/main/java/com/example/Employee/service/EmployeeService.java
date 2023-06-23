@@ -34,8 +34,8 @@ public class EmployeeService {
         employee.setName(employeeDetails.getName());
         employee.setEmail(employeeDetails.getEmail());
         employee.setAge(employeeDetails.getAge());
-        employeeRepository.save(employee);
-        return ResponseEntity.ok(employee);
+        Employee updatedEmployee = employeeRepository.save(employee);
+        return ResponseEntity.ok(updatedEmployee);
     }
 }
 
