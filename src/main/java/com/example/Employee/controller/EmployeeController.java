@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.Employee.service.EmployeeService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/employees")
@@ -35,5 +36,10 @@ public class EmployeeController {
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Long id, @RequestBody Employee employeeDetails){
         return employeeService.updateEmployee(id,employeeDetails);
 
+    }
+
+    @DeleteMapping("/employee/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable("id") Long id){
+        return employeeService.deleteEmployee(id);
     }
 }
