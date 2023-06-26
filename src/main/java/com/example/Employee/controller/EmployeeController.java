@@ -37,7 +37,7 @@ public class EmployeeController {
         return employeeService.updateEmployee(id,employeeDetails);
 
     }
-
+// Deleting the employees
     @DeleteMapping("/employee/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable("id") Long id){
         return employeeService.deleteEmployee(id);
